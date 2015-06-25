@@ -8,6 +8,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var multer = require('multer');
 var cors = require('cors');
+var plivo = require('plivo-node');
 
 var bodyParser = require('body-parser');
 var db = require('./config/db');
