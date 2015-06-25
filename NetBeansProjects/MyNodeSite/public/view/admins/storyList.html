@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Stories</h3>
+                <a href="#addStory" class="btn btn-app pull-right" style="margin:10px 10px 0 0">
+                    <i class="fa fa-plus"></i>
+                    Add Story
+                </a>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Heading</th>
+                            <th>Writer Name</th>
+                            <th>Writer Email</th>
+                            <th>Writer Phone</th>
+                            <th>Short Description</th>
+                            <th>Written</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="story in stories">
+                            <td>{{story.heading}}</td>
+                            <td>{{story.user_id.name}}</td>
+                            <td>{{story.user_id.email}}</td>
+                            <td>{{story.user_id.phone}}</td>
+                            <td>{{story.shortDesc}}</td>
+                            <td>{{story.created| date}}</td>
+                            <td>
+                                <a href="#/viewStory/{{story._id}}">View</a> |
+                                <a href="#/addStory/{{story._id}}">Edit</a> |
+                                <a href="#/deleteStory/{{story._id}}">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+</div>
+
+<!-- page script -->
+<script type="text/javascript">
+    $(function () {
+        $('#example1').dataTable({
+            "bPaginate": false,
+            "bLengthChange": true,
+            "bFilter": false,
+            "bSort": false,
+            "bInfo": true,
+            "bAutoWidth": true
+        });
+    });
+</script>

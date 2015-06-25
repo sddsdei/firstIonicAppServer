@@ -1,0 +1,12 @@
+CKEDITOR.editorConfig = function (config) {
+    config.toolbarGroups = [{name: "clipboard", groups: ["clipboard", "undo"]}, {name: "editing", groups: ["find", "selection", "spellchecker"]}, {name: "links"}, {name: "insert"}, {name: "forms"}, {name: "tools"}, {name: "document", groups: ["mode", "document", "doctools"]}, {name: "others"}, "/", {name: "basicstyles", groups: ["basicstyles", "cleanup"]}, {name: "paragraph", groups: ["list", "indent", "blocks", "align", "bidi"]}, {name: "styles"}, {name: "colors"}, {name: "about"}];
+    config.removeButtons = "Underline,Subscript,Superscript";
+    config.format_tags = "p;h1;h2;h3;pre";
+    config.removeDialogTabs = "image:advanced;link:advanced"
+
+//    config['filebrowserBrowseUrl'] = "/public/javascripts/kcfinder/browse.php?type=files";
+//    config['filebrowserImageBrowseUrl'] = "/public/javascripts/kcfinder/browse.php?type=images";
+//    config['filebrowserFlashBrowseUrl'] = "/public/javascripts/kcfinder/browse.php?type=flash";
+    config['filebrowserUploadUrl'] = "/uploader";
+
+};
