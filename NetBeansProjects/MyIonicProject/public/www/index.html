@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+        <!-- angularjs file (Jubin) -->
+        <script src="lib/ionic/js/angular/angular-route.min.js"></script>
+        <script src="lib/ionic/js/angular/ng-file-upload-shim.min.js"></script>
+        <script src="lib/ionic/js/angular/ng-file-upload.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <!--<script src="cordova.js"></script>-->
+
+        <!-- your app's js -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
+
+        <!-- Controller Jubin -->
+        <script src="js/adminController.js"></script>
+        <script src="js/jubinCustom.js"></script>
+
+        <script>
+            document.addEventListener('backbutton', function (event) {
+                event.preventDefault(); // EDIT
+                navigator.app.exitApp(); // exit the app
+            });
+        </script>
+
+    </head>
+    <body ng-app="starter">
+        <!--
+          The nav bar that will be updated as we navigate between views.
+        -->
+
+
+    <ion-side-menus enable-menu-with-back-views="true">
+        <!-- Left menu -->
+        <ion-side-menu side="left" expose-aside-when="large">
+            <ion-header-bar class="bar-positive">
+                <h1 class="title">Menu</h1>
+            </ion-header-bar>
+            <ion-content scroll="false">
+                <ion-list>
+                    <ion-item class="item-divider">
+                        Users
+                    </ion-item>
+                    <a href="#/addUser" class="item item-icon-right ">
+                        Add User
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </a>
+                    <a href="#/userList" class="item item-icon-right ">
+                        List User
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </a>
+                    <ion-item class="item-divider">
+                        Stories
+                    </ion-item>
+                    <a href="#/addStory" class="item item-icon-right ">
+                        Add Story
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </a>
+                    <a href="#/storyList" class="item item-icon-right ">
+                        List Story
+                        <i class="icon ion-chevron-right icon-accessory"></i>
+                    </a>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+
+        <ion-side-menu-content ng-controller="ContentController">
+
+            <ion-nav-bar class="bar-positive">
+                <ion-nav-buttons side="left">
+                    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+                </ion-nav-buttons>
+                <ion-nav-back-button>
+                </ion-nav-back-button>
+            </ion-nav-bar>
+
+            <!--<ion-tabs class="tabs-icon-top tabs-color-active-positive">-->
+            <ion-tabs class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+
+                <!-- Home Tab -->
+                <ion-tab title="Home" icon-off="ion-home" icon-on="ion-home " href="#/userList">
+                    <ion-nav-view name="home"></ion-nav-view>
+                </ion-tab>
+
+                <!-- Dashboard Tab -->
+                <ion-tab title="User List" icon-off="ion-android-people" icon-on="ion-android-people" href="#/userList">
+                    <ion-nav-view name="userList"></ion-nav-view>
+                </ion-tab>
+
+                <!-- Chats Tab -->
+                <ion-tab title="Story List" icon-off="ion-android-document" icon-on="ion-android-document" href="#/storyList">
+                    <ion-nav-view name="storyList"></ion-nav-view>
+                </ion-tab>
+
+            </ion-tabs>
+
+
+        </ion-side-menu-content>
+
+    </ion-side-menus>
+
+
+
+
+
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<ion-view view-title="Story List">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="story in stories" type="item-text-wrap" href="#/viewStory/{{story._id}}">
+        <img ng-src="/assets/files/{{story.user_id.profileimage}}" err-src="/assets/img/admin/avatar3.png" alt="User Image" />
+        <h2>{{story.heading}}</h2>
+        <p>by {{story.user_id.name}}</p>
+        <p>written on {{story.created| date}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-positive" ng-click="editStory(story._id)">
+          Edit
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="remove(story)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

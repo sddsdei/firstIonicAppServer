@@ -1,0 +1,26 @@
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-preview" style="border-bottom: 2px dashed #999;" ng-repeat="story in stories">
+                <a href="/#/view/{{story._id}}">
+                    <h2 class="post-title">
+                        {{story.heading}}
+                    </h2>
+                    <h5 class="post-subtitle">
+                        {{story.shortDesc}}
+                    </h5>
+                </a>
+                <p class="post-meta">Posted by <a href="#">{{story.name}}</a> on {{story.created | date}}</p>
+            </div>
+            <!--<hr>-->
+
+            <!-- Pager -->
+            <!--                    <ul class="pager">
+                                    <li class="next">
+                                        <a href="#">Older Posts &rarr;</a>
+                                    </li>
+                                </ul>-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">Sub-Category List</h3>
+                <a href="#addSubCat" class="btn btn-app pull-right" style="margin:10px 10px 0 0">
+                    <i class="fa fa-plus"></i>
+                    Add Sub-Category
+                </a>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive">
+                <table id="example1" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Short Description</th>
+                            <th>Category</th>
+                            <th>Created</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="cat in subCats">
+                            <td><img ng-src="/assets/files/{{cat.subCatImage}}" err-src="/assets/img/admin/avatar3.png" class="img center-block" style="width: 45px" alt="User Image" /></td>
+                            <td>{{cat.name}}</td>
+                            <td>{{cat.shortDesc}}</td>
+                            <td>{{cat.cat_id.name}}</td>
+                            <td>{{cat.created | date}}</td>
+                            <td>
+                                <!--<a href="#/viewCat/{{cat._id}}">View</a> |-->
+                                <a href="#/addSubCat/{{cat._id}}">Edit</a> |
+                                <a href="#/deleteSubCat/{{cat._id}}">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><!-- /.box-body -->
+        </div><!-- /.box -->
+    </div>
+</div>
+
+<!-- page script -->
+<script type="text/javascript">
+    $(function () {
+        $('#example1').dataTable({
+            "bPaginate": false,
+            "bLengthChange": true,
+            "bFilter": false,
+            "bSort": false,
+            "bInfo": true,
+            "bAutoWidth": true
+        });
+    });
+</script>
